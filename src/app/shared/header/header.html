@@ -1,0 +1,36 @@
+<header class="header" role="banner">
+	<div class="header__topbar">
+		<div class="layout__container header__topbar-container">
+			<p class="header__topbar-text">Envío gratis en pedidos +60€ · Cambios en 30 días</p>
+		</div>
+	</div>
+
+	<div class="layout__container header__container">
+		<a class="header__brand" routerLink="/" aria-label="Inicio SprintStore">
+			<img class="header__brand-logo" src="/img/logo.png" alt="Logo SprintStore">
+			<span class="header__brand-copy">
+				<strong>SprintStore</strong>
+				<small>Running Performance</small>
+			</span>
+		</a>
+
+		<input class="header__nav-input" type="checkbox" id="nav-toggle" aria-label="Abrir menú principal">
+		<label class="header__nav-button" for="nav-toggle">Menú</label>
+
+		<nav class="header__nav" aria-label="Navegación principal">
+			<ul class="header__menu">
+				<li class="header__item"><a class="header__link" routerLink="/" routerLinkActive="header__link--active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a></li>
+				<li class="header__item"><a class="header__link" routerLink="/productos" routerLinkActive="header__link--active" [routerLinkActiveOptions]="{ exact: true }">Productos</a></li>
+				<li class="header__item"><a class="header__link" routerLink="/carrito" routerLinkActive="header__link--active">Carrito</a></li>
+				<li class="header__item"><a class="header__link" routerLink="/contacto" routerLinkActive="header__link--active">Contacto</a></li>
+			</ul>
+		</nav>
+
+		<div class="header__tools">
+			<input class="header__theme-input" type="checkbox" id="theme-toggle" aria-label="Activar modo oscuro">
+			<label class="header__theme-button" for="theme-toggle">🌙</label>
+			<a class="header__cart" routerLink="/carrito">Carrito</a>
+			<a class="button button--primary header__cta" routerLink="/productos">Comprar</a>
+		</div>
+	</div>
+</header>

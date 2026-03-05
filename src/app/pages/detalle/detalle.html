@@ -1,0 +1,56 @@
+<main class="main-content page page--detail" *ngIf="product as item; else notFound">
+	<div class="layout__container detail-breadcrumbs" aria-label="Migas de pan">
+		<a routerLink="/">Inicio</a>
+		<span>·</span>
+		<a routerLink="/productos">Productos</a>
+		<span>·</span>
+		<span>{{ item.name }}</span>
+	</div>
+	<section class="section section--detail" aria-labelledby="detail-title">
+		<div class="layout__container product-detail">
+			<div class="product-detail__media"><img [src]="item.image" [alt]="item.alt"></div>
+			<div class="product-detail__content">
+				<p class="product-detail__tag">{{ item.tag }}</p>
+				<h1 class="product-detail__title" id="detail-title">{{ item.name }}</h1>
+				<p class="product-detail__meta">{{ item.category }} · ★ {{ item.rating }} ({{ item.reviews }} valoraciones)</p>
+				<p class="product-detail__price">{{ item.price }}</p>
+				<p class="product-detail__description">{{ item.longDescription }}</p>
+				<ul class="product-detail__specs">
+					<li class="product-detail__spec" *ngFor="let spec of item.specs">{{ spec }}</li>
+				</ul>
+				<div class="product-detail__service">
+					<p class="product-detail__service-item">Envío en 24/48h</p>
+					<p class="product-detail__service-item">Cambio de talla sin coste</p>
+					<p class="product-detail__service-item">Atención técnica para corredores</p>
+				</div>
+				<div class="product-detail__actions">
+					<a class="button button--primary" routerLink="/carrito">Ir al carrito</a>
+					<a class="button button--ghost" routerLink="/productos">Volver a productos</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--related" aria-labelledby="related-title">
+		<div class="layout__container">
+			<h2 class="section__title" id="related-title">También te puede interesar</h2>
+			<div class="product-grid">
+				<app-product-card *ngFor="let related of relatedProducts" [product]="related" [showCategory]="true"></app-product-card>
+			</div>
+		</div>
+	</section>
+</main>
+
+<ng-template #notFound>
+	<main class="main-content">
+		<section class="section">
+			<div class="layout__container">
+				<article class="product-card">
+					<h1 class="product-card__title">Producto no encontrado</h1>
+					<p class="product-card__text">El producto solicitado no existe en el catálogo.</p>
+					<a class="button button--primary" routerLink="/productos">Volver a productos</a>
+				</article>
+			</div>
+		</section>
+	</main>
+</ng-template>

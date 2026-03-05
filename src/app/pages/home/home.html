@@ -1,0 +1,67 @@
+<main class="main-content page page--home">
+	<section class="hero hero--home">
+		<div class="layout__container hero__container">
+			<div class="hero__layout">
+				<div class="hero__content">
+					<p class="hero__kicker">SprintStore Performance Lab · Temporada 2026</p>
+					<h1 class="hero__title">Todo para rendir al máximo en pista y asfalto</h1>
+					<p class="hero__text">Zapatillas, ropa técnica y accesorios para entrenar mejor. Catálogo inspirado en corredores reales.</p>
+					<div class="hero__actions">
+						<a class="button button--primary" routerLink="/productos">Ver productos</a>
+						<a class="button button--ghost" routerLink="/productos/sprint-pro-x1">Producto destacado</a>
+					</div>
+					<ul class="hero__trust-list" aria-label="Ventajas">
+						<li class="hero__trust-item">Selección técnica por disciplina</li>
+						<li class="hero__trust-item">Guía de tallas y pisada</li>
+						<li class="hero__trust-item">Atención experta para runners</li>
+					</ul>
+				</div>
+
+				<aside class="hero__showcase" aria-label="Resumen destacado">
+					<p class="hero__showcase-tag">Drop de la semana</p>
+					<h2 class="hero__showcase-title">Sprint Pro X1</h2>
+					<p class="hero__showcase-text">Ligereza, retorno de energía y estabilidad para ritmos de competición.</p>
+					<a class="button button--small" routerLink="/productos/sprint-pro-x1">Ver análisis completo</a>
+				</aside>
+			</div>
+			<div class="hero__metrics">
+				<article class="hero__metric" *ngFor="let metric of metrics">
+					<p class="hero__metric-value">{{ metric.value }}</p>
+					<p class="hero__metric-label">{{ metric.label }}</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--featured" aria-labelledby="destacados-title">
+		<div class="layout__container">
+			<h2 class="section__title" id="destacados-title">Productos destacados</h2>
+			<div class="product-grid">
+				<app-product-card *ngFor="let product of featuredProducts" [product]="product"></app-product-card>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--benefits" aria-labelledby="benefits-title">
+		<div class="layout__container">
+			<h2 class="section__title" id="benefits-title">Por qué SprintStore</h2>
+			<div class="benefit-grid">
+				<article class="benefit-card" *ngFor="let highlight of highlights">
+					<h3 class="benefit-card__title">{{ highlight.title }}</h3>
+					<p class="benefit-card__text">{{ highlight.text }}</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--cta">
+		<div class="layout__container cta-banner">
+			<div>
+				<p class="cta-banner__kicker">Plan de entrenamiento</p>
+				<h2 class="cta-banner__title">Configura tu equipamiento para la próxima carrera</h2>
+				<p class="cta-banner__text">Descubre combinaciones recomendadas por distancia, climatología y ritmo objetivo.</p>
+			</div>
+			<a class="button button--primary" routerLink="/productos">Empezar ahora</a>
+		</div>
+	</section>
+</main>

@@ -1,0 +1,132 @@
+.catalog {
+	display: grid;
+	grid-template-columns: 260px 1fr;
+	gap: 1rem;
+}
+
+.catalog--no-filters {
+	grid-template-columns: 1fr;
+}
+
+.catalog--no-filters .catalog__header {
+	grid-column: auto;
+}
+
+.catalog__header {
+	grid-column: 1 / -1;
+}
+
+.catalog__title {
+	margin: 0 0 0.5rem;
+	font-family: "Space Grotesk", sans-serif;
+	font-size: clamp(1.8rem, 3vw, 2.3rem);
+}
+
+.catalog__subtitle {
+	margin: 0;
+	color: var(--color-text-soft);
+}
+
+.catalog__toolbar {
+	margin-top: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.8rem;
+	flex-wrap: wrap;
+}
+
+.catalog__count {
+	margin: 0;
+	font-weight: 700;
+	color: var(--color-primary-strong);
+}
+
+.catalog__chips {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 0.45rem;
+	flex-wrap: wrap;
+}
+
+.catalog__chip {
+	border: 1px solid var(--color-border);
+	border-radius: 999px;
+	padding: 0.32rem 0.6rem;
+	font-size: 0.82rem;
+	font-weight: 700;
+	color: var(--color-text-soft);
+	background: color-mix(in srgb, var(--color-surface-alt) 86%, #ffffff);
+	transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.catalog__chip:hover {
+	transform: translateY(-1px);
+	border-color: var(--color-primary);
+}
+
+.page--products .section--catalog {
+	background: color-mix(in srgb, var(--color-primary) 6%, var(--color-bg));
+}
+
+.page--products .catalog__header {
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: 1.15rem;
+	padding: 1.2rem 1.3rem;
+	box-shadow: var(--shadow-strong);
+}
+
+.page--products .catalog__title {
+	margin-bottom: 0.3rem;
+}
+
+.page--products .catalog__subtitle {
+	font-size: 1.05rem;
+}
+
+.catalog__grid {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	align-items: stretch;
+}
+
+.page--products .catalog__grid {
+	margin-top: 0.25rem;
+}
+
+.page--products .product-card {
+	border-radius: 1.1rem;
+	transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.page--products .product-card:hover {
+	transform: translateY(-5px);
+	box-shadow: var(--shadow-strong);
+	border-color: color-mix(in srgb, var(--color-primary) 45%, var(--color-border));
+}
+
+.page--products .product-card__price {
+	color: var(--color-primary-strong);
+	font-size: 1.45rem;
+}
+
+@media (max-width: 900px) {
+	.catalog,
+	.catalog__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.catalog {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 640px) {
+	.catalog__grid {
+		grid-template-columns: 1fr;
+	}
+}

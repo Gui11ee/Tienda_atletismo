@@ -1,0 +1,106 @@
+.cart-layout {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 320px;
+	gap: 1rem;
+}
+
+.cart-list {
+	border: 1px solid var(--color-border);
+	border-radius: 1rem;
+	background: var(--color-surface);
+	padding: 1rem;
+	box-shadow: var(--shadow-soft);
+}
+
+.cart-list__title {
+	margin-top: 0;
+	font-family: "Space Grotesk", sans-serif;
+}
+
+.cart-item {
+	display: grid;
+	grid-template-columns: 140px 1fr auto auto auto;
+	gap: 0.8rem;
+	align-items: center;
+	padding: 0.8rem 0;
+	border-top: 1px solid var(--color-border);
+}
+
+.cart-item:first-of-type {
+	border-top: 0;
+}
+
+.cart-item__media {
+	border-radius: 0.75rem;
+	min-height: 72px;
+	display: grid;
+	place-items: center;
+	background: color-mix(in srgb, var(--color-primary) 14%, #ffffff);
+	color: var(--color-primary-strong);
+	font-weight: 700;
+	font-size: 0.9rem;
+}
+
+.cart-item__title {
+	margin: 0;
+	font-family: "Space Grotesk", sans-serif;
+	font-size: 1rem;
+}
+
+.cart-item__meta,
+.cart-item__qty {
+	margin: 0;
+	color: var(--color-text-soft);
+}
+
+.cart-item__price {
+	margin: 0;
+	font-weight: 700;
+}
+
+.cart-summary {
+	border: 1px solid var(--color-border);
+	background: var(--color-surface);
+	border-radius: 1rem;
+	padding: 1rem;
+	box-shadow: var(--shadow-soft);
+}
+
+.cart-summary__title {
+	margin-top: 0;
+	font-family: "Space Grotesk", sans-serif;
+}
+
+.cart-summary__line {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.6rem;
+}
+
+.cart-summary__line--total {
+	margin-top: 0.8rem;
+	padding-top: 0.8rem;
+	border-top: 1px solid var(--color-border);
+	font-size: 1.08rem;
+	font-weight: 700;
+}
+
+.cart-summary__button {
+	width: 100%;
+	margin-top: 0.5rem;
+}
+
+@media (max-width: 900px) {
+	.cart-layout {
+		grid-template-columns: 1fr;
+	}
+
+	.cart-item {
+		grid-template-columns: 110px 1fr;
+	}
+
+	.cart-item__qty,
+	.cart-item__price {
+		justify-self: start;
+	}
+}

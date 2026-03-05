@@ -1,0 +1,26 @@
+<main class="main-content page page--products">
+	<section class="section section--catalog" aria-labelledby="catalog-title">
+		<div class="layout__container catalog catalog--no-filters">
+			<header class="catalog__header">
+				<h1 class="catalog__title" id="catalog-title">Listado de productos</h1>
+				<p class="catalog__subtitle">Rendimiento, confort y estilo para cada entrenamiento.</p>
+				<div class="catalog__toolbar">
+					<p class="catalog__count">{{ products.length }} productos disponibles</p>
+					<ul class="catalog__chips" aria-label="Categorías">
+						<li class="catalog__chip" *ngFor="let category of categories">{{ category }}</li>
+					</ul>
+				</div>
+			</header>
+
+			<div class="catalog__grid">
+				<app-product-card
+					*ngFor="let product of products"
+					[product]="product"
+					[showBadge]="true"
+					[showCategory]="true"
+					[showRating]="true">
+				</app-product-card>
+			</div>
+		</div>
+	</section>
+</main>

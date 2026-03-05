@@ -1,0 +1,10 @@
+<article class="product-card">
+	<p class="product-card__badge" *ngIf="showBadge">{{ product.badge }}</p>
+	<div class="product-card__media"><img [src]="product.image" [alt]="product.alt"></div>
+	<p class="product-card__category" *ngIf="showCategory">{{ product.category }}</p>
+	<h3 class="product-card__title">{{ product.name }}</h3>
+	<p class="product-card__text">{{ product.shortDescription }}</p>
+	<p class="product-card__rating" *ngIf="showRating">★ {{ product.rating }} · {{ product.reviews }} reseñas</p>
+	<p class="product-card__price">{{ product.price }}</p>
+	<a class="button button--small" [routerLink]="['/productos', product.slug]">Ver detalle</a>
+</article>

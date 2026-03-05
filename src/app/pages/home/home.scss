@@ -1,0 +1,231 @@
+.hero {
+	position: relative;
+	background: var(--color-hero);
+	color: #fff;
+	overflow: hidden;
+}
+
+.hero::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.12);
+	pointer-events: none;
+}
+
+.hero__container {
+	position: relative;
+	z-index: 1;
+	padding: 4.5rem 0;
+}
+
+.hero__layout {
+	display: grid;
+	grid-template-columns: 1.1fr 0.9fr;
+	gap: 1.2rem;
+	align-items: start;
+}
+
+.hero__content {
+	display: grid;
+	gap: 0.75rem;
+}
+
+.hero__kicker {
+	margin: 0 0 0.4rem;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+}
+
+.hero__title {
+	margin: 0;
+	max-width: 680px;
+	font-family: "Space Grotesk", sans-serif;
+	font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.hero__text {
+	max-width: 620px;
+	color: rgba(255, 255, 255, 0.9);
+}
+
+.hero__actions {
+	display: flex;
+	gap: 0.7rem;
+	flex-wrap: wrap;
+}
+
+.hero__trust-list {
+	list-style: none;
+	padding: 0;
+	margin: 0.2rem 0 0;
+	display: grid;
+	gap: 0.45rem;
+}
+
+.hero__trust-item {
+	padding: 0.45rem 0.65rem;
+	border-radius: 0.65rem;
+	font-weight: 600;
+	font-size: 0.94rem;
+	background: rgba(255, 255, 255, 0.14);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero__showcase {
+	border-radius: 1rem;
+	padding: 1rem;
+	background: rgba(255, 255, 255, 0.16);
+	border: 1px solid rgba(255, 255, 255, 0.24);
+	box-shadow: 0 16px 34px rgba(5, 18, 46, 0.28);
+	display: grid;
+	gap: 0.6rem;
+}
+
+.hero__showcase-tag {
+	margin: 0;
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.86);
+}
+
+.hero__showcase-title {
+	margin: 0;
+	font-family: "Space Grotesk", sans-serif;
+	font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+}
+
+.hero__showcase-text {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.88);
+}
+
+.hero .button--ghost {
+	color: #ffffff;
+	border-color: rgba(255, 255, 255, 0.75);
+	background: rgba(255, 255, 255, 0.12);
+}
+
+.hero .button--ghost:hover {
+	background: rgba(255, 255, 255, 0.22);
+}
+
+.hero__metrics {
+	margin-top: 1.6rem;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 0.7rem;
+}
+
+.hero__metric {
+	padding: 0.85rem;
+	border-radius: 0.85rem;
+	background: rgba(255, 255, 255, 0.14);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.hero__metric-value {
+	margin: 0;
+	font-size: 1.2rem;
+	font-family: "Space Grotesk", sans-serif;
+	font-weight: 700;
+}
+
+.hero__metric-label {
+	margin: 0.2rem 0 0;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.product-grid {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.benefit-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+.benefit-card {
+	border: 1px solid var(--color-border);
+	background: var(--color-surface);
+	border-radius: 1rem;
+	padding: 1.1rem;
+	box-shadow: var(--shadow-soft);
+}
+
+.benefit-card__title {
+	margin: 0 0 0.5rem;
+	font-family: "Space Grotesk", sans-serif;
+}
+
+.benefit-card__text {
+	margin: 0;
+	color: var(--color-text-soft);
+}
+
+.cta-banner {
+	border: 1px solid var(--color-border);
+	border-radius: 1.1rem;
+	padding: 1.3rem;
+	background: var(--color-surface);
+	box-shadow: var(--shadow-strong);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.cta-banner__kicker {
+	margin: 0;
+	color: var(--color-primary-strong);
+	font-weight: 700;
+}
+
+.cta-banner__title {
+	margin: 0.25rem 0 0.35rem;
+	font-family: "Space Grotesk", sans-serif;
+	font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+}
+
+.cta-banner__text {
+	margin: 0;
+	color: var(--color-text-soft);
+}
+
+@media (max-width: 900px) {
+	.hero__layout {
+		grid-template-columns: 1fr;
+	}
+
+	.hero__showcase {
+		order: 2;
+	}
+
+	.product-grid,
+	.hero__metrics,
+	.benefit-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 640px) {
+	.product-grid,
+	.hero__metrics,
+	.benefit-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.hero__actions {
+		flex-direction: column;
+	}
+
+	.cta-banner {
+		flex-direction: column;
+		align-items: stretch;
+	}
+}
